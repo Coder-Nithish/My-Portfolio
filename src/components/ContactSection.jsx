@@ -16,9 +16,9 @@ const ContactSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-title">Let's Connect</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '4rem' }}>
+          <div className="grid-auto-fit">
             
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', textAlign: 'left' }}>
               <div>
                 <h3 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: 'var(--text-main)', fontWeight: 800, letterSpacing: '-1px' }}>Ready to build something amazing?</h3>
                 <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.8 }}>

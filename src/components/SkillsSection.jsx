@@ -38,7 +38,7 @@ const SkillsSection = () => {
     <section id="skills" ref={ref}>
       <div className="container">
         <h2 className="section-title">Technical Expertise</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
+        <div className="grid-auto-fit">
           {skillCategories.map((category, idx) => {
             const Icon = category.icon;
             return (

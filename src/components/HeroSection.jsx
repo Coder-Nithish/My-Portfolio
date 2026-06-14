@@ -14,7 +14,7 @@ const floatingIcons = [
 
 const HeroSection = () => {
   return (
-    <section id="hero" style={{ minHeight: '90vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', paddingTop: '60px', paddingBottom: '60px' }}>
+    <section id="hero" style={{ minHeight: '90vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
       
       {/* Animated Background Gradients */}
       <motion.div 
@@ -35,13 +35,14 @@ const HeroSection = () => {
           animate={{ y: [0, -15, 0], rotate: [0, 5, -5, 0] }}
           transition={{ duration: 5, repeat: Infinity, delay: item.delay, ease: "easeInOut" }}
           style={{ position: 'absolute', top: `calc(50% + ${item.y}px)`, left: `calc(50% + ${item.x}px)`, color: item.color, opacity: 0.25, zIndex: 0 }}
+          className="desktop-only-icon"
         >
           <item.Icon size={56} strokeWidth={1} />
         </motion.div>
       ))}
 
       <div className="container" style={{ position: 'relative', zIndex: 10 }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
+        <div className="grid-2-col">
           
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -53,12 +54,12 @@ const HeroSection = () => {
               Available for Hire
             </div>
 
-            <h1 style={{ fontSize: '4.5rem', marginBottom: '1rem', lineHeight: 1.1, color: 'var(--text-main)', fontWeight: 800 }}>
+            <h1 className="hero-title">
               Software Developer <br/>
-              <span style={{ color: 'var(--text-muted)', fontSize: '2.5rem' }}>Backend Systems & MES Integration</span>
+              <span className="hero-subtitle">Backend Systems & MES Integration</span>
             </h1>
 
-            <div style={{ fontSize: '1.5rem', color: 'var(--primary)', marginBottom: '1.5rem', fontWeight: 500, height: '40px' }}>
+            <div className="type-animation-text">
               <TypeAnimation
                 sequence={[
                   'Golang & Node.js Specialist', 2000,
@@ -73,11 +74,11 @@ const HeroSection = () => {
               />
             </div>
 
-            <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', marginBottom: '3rem', maxWidth: '600px', lineHeight: 1.8 }}>
+            <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', marginBottom: '3rem', maxWidth: '600px', lineHeight: 1.8, marginLeft: 'auto', marginRight: 'auto' }}>
               {profileData.summary.split('.')[0]}. Specialized in designing and delivering high-performance backend systems, real-time data pipelines, and scalable cloud-to-edge integrations.
             </p>
 
-            <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+            <div className="hero-btn-group" style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
               <a href="#contact" className="btn btn-primary">
                 Contact Me <ChevronRight size={18} />
               </a>
@@ -97,7 +98,7 @@ const HeroSection = () => {
             <motion.div 
               animate={{ y: [0, -15, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              style={{ position: 'relative', width: '420px', height: '420px', borderRadius: '30px', background: 'var(--bg-card-solid)', padding: '15px', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0,0,0,0.05), 0 0 40px var(--primary-glow)', transform: 'rotate(2deg)' }}
+              className="hero-avatar-wrapper"
             >
               <div style={{ width: '100%', height: '100%', borderRadius: '20px', overflow: 'hidden', backgroundColor: 'var(--bg-element)', border: '1px solid var(--glass-border)', transform: 'rotate(-2deg)' }}>
                 <img 
@@ -119,6 +120,11 @@ const HeroSection = () => {
 
         </div>
       </div>
+      <style>{`
+        @media (max-width: 768px) {
+          .desktop-only-icon { display: none !important; }
+        }
+      `}</style>
     </section>
   );
 };

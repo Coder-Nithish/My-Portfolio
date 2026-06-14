@@ -9,7 +9,7 @@ const AboutSection = () => {
   return (
     <section id="about" ref={ref} style={{ backgroundColor: 'transparent' }}>
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
+        <div className="grid-2-col" style={{ alignItems: 'start' }}>
           
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -21,18 +21,18 @@ const AboutSection = () => {
               {profileData.summary}
             </p>
             
-            <div className="glass-card" style={{ padding: '2rem', backgroundColor: 'var(--bg-card)' }}>
+            <div className="glass-card" style={{ padding: '2rem', backgroundColor: 'var(--bg-card)', textAlign: 'left' }}>
               <h3 style={{ fontSize: '1.3rem', color: 'var(--text-main)', marginBottom: '1.5rem', fontWeight: 700 }}>Contact Details</h3>
               <ul style={{ listStyleType: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <li style={{ display: 'grid', gridTemplateColumns: '120px 1fr' }}>
+                <li style={{ display: 'grid', gridTemplateColumns: '100px 1fr' }}>
                   <span style={{ color: 'var(--text-muted)', fontWeight: 600 }}>Location:</span>
                   <span style={{ color: 'var(--text-main)', fontWeight: 500 }}>{profileData.location}</span>
                 </li>
-                <li style={{ display: 'grid', gridTemplateColumns: '120px 1fr' }}>
+                <li style={{ display: 'grid', gridTemplateColumns: '100px 1fr' }}>
                   <span style={{ color: 'var(--text-muted)', fontWeight: 600 }}>Email:</span>
-                  <span style={{ color: 'var(--text-main)', fontWeight: 500 }}>{profileData.email}</span>
+                  <span style={{ color: 'var(--text-main)', fontWeight: 500, wordBreak: 'break-all' }}>{profileData.email}</span>
                 </li>
-                <li style={{ display: 'grid', gridTemplateColumns: '120px 1fr' }}>
+                <li style={{ display: 'grid', gridTemplateColumns: '100px 1fr' }}>
                   <span style={{ color: 'var(--text-muted)', fontWeight: 600 }}>Phone:</span>
                   <span style={{ color: 'var(--text-main)', fontWeight: 500 }}>{profileData.phone}</span>
                 </li>
@@ -44,14 +44,14 @@ const AboutSection = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}
+            style={{ display: 'flex', flexDirection: 'column', gap: '2rem', textAlign: 'left' }}
           >
             <div>
               <h3 style={{ fontSize: '1.8rem', color: 'var(--text-main)', marginBottom: '1.5rem', fontWeight: 700 }}>Education</h3>
               {educationData.map((edu, idx) => (
                 <div key={idx} className="glass-card" style={{ padding: '1.5rem', marginBottom: '1rem', backgroundColor: 'var(--bg-card)' }}>
                   <h4 style={{ fontSize: '1.2rem', color: 'var(--text-main)', marginBottom: '0.5rem', fontWeight: 700 }}>{edu.degree}</h4>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
                     <span style={{ color: 'var(--primary)', fontWeight: 600 }}>{edu.institution}</span>
                     <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)', fontWeight: 500 }}>{edu.period}</span>
                   </div>

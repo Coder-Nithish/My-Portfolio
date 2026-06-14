@@ -28,7 +28,7 @@ const ServicesSection = () => {
     <section id="services" ref={ref} style={{ backgroundColor: 'transparent', borderTop: '1px solid var(--glass-border)', borderBottom: '1px solid var(--glass-border)' }}>
       <div className="container">
         <h2 className="section-title">Freelance Services</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
+        <div className="grid-auto-fit-small">
           {services.map((service, idx) => {
             const Icon = service.icon;
             return (

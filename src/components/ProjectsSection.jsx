@@ -17,7 +17,7 @@ const ProjectsSection = () => {
     <section id="projects" ref={ref} style={{ backgroundColor: 'transparent', borderTop: '1px solid var(--glass-border)', borderBottom: '1px solid var(--glass-border)' }}>
       <div className="container">
         <h2 className="section-title">Featured Projects</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: '3rem' }}>
+        <div className="grid-auto-fit">
           {projectsData.map((project, idx) => (
             <motion.div 
               key={idx} 

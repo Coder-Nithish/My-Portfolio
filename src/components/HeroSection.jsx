@@ -3,8 +3,7 @@ import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { profileData } from '../data';
 import { Download, ChevronRight, Server, Database, Code, Cpu } from 'lucide-react';
-
-const profileImageUrl = '/src/assets/profile.png'; 
+import profileImageUrl from '../assets/profile.png';
 
 const floatingIcons = [
   { Icon: Server, color: 'var(--primary)', delay: 0, x: -120, y: -80 },
